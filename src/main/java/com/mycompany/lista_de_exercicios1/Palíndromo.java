@@ -27,14 +27,12 @@ public class Palíndromo {
         
          String invertida = new StringBuffer(pSemEspacos).reverse().toString();
          
-         if (pSemEspacos.equals(pSemEspacos)){
+         if (pSemEspacos.equals(invertida)){
              System.out.println("A palavra/frase " + palavra + " é um palíndromo!!");
          } 
          else {
              System.out.println("A palavra/frase " + palavra + " não é um palíndromo. :(");
          }
-
-
         }
     }
 }
