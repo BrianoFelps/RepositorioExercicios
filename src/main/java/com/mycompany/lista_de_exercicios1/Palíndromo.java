@@ -18,19 +18,23 @@ public class Palíndromo {
         
         while (repetir){
         System.out.println("------VERIFICADOR DE PALÍNDROMOS------");
-        System.out.println("Digite a palavra que será verificada:");
-        palavra = scanner.next();
+        System.out.println("Digite a palavra/frase que será verificada:");
+        palavra = scanner.nextLine();
         
         palavra = palavra.toLowerCase();
         
-         String invertida = new StringBuffer(palavra).reverse().toString();
+         final String pSemEspacos = palavra.replaceAll(" ", "");
+        
+         String invertida = new StringBuffer(pSemEspacos).reverse().toString();
          
-         if (palavra.equals(invertida)){
-             System.out.println("A palavra digitada é um palíndromo!!");
+         if (pSemEspacos.equals(pSemEspacos)){
+             System.out.println("A palavra/frase " + palavra + " é um palíndromo!!");
          } 
          else {
-             System.out.println("A palavra digitada não é um palíndromo. :(");
+             System.out.println("A palavra/frase " + palavra + " não é um palíndromo. :(");
          }
+
+
         }
     }
 }
