@@ -14,9 +14,11 @@ public class ProgramaCalculadora {
     public static void main(String[] args) {
         Calculadora calculadora = new Calculadora ();        
         Calculadora_Científica cc = new Calculadora_Científica();
+        Calculadora_MédiasAritméticas ma = new Calculadora_MédiasAritméticas();
         
-        float soma, sub, mult, div, num1, num2 ;
-        Double RQ, Pot, num3, num4, num5;
+        float soma, sub, mult, div, num1, num2;
+        Double RQ, Pot, MS, MP,  num3, num4, num5, num6, num7, num8, numn;
+        Double Pes1, Pes2, Pes3;
         
         Scanner scanner = new Scanner (System.in);
         
@@ -59,5 +61,40 @@ public class ProgramaCalculadora {
             
             System.out.println("O número " + num4 + " elevado a " + num5 + " resulta em: " + Pot);
         
+            //Media aritmética simples
+            System.out.println("------Média aritmética simples------");
+            
+             System.out.println("Informe o primeiro número: ");
+             num6 = scanner.nextDouble();
+             System.out.println("Informe o segundo número: ");
+             num7 = scanner.nextDouble();
+             System.out.println("Informe o terceiro número: ");
+             num8 = scanner.nextDouble();
+             
+             numn = 3.0;
+             MS = ma.MedS(num6, num7, num8, numn);
+             
+             System.out.println("A média dos valores apresentados é: " + MS);
+            
+              //Média aritmética ponderada
+              System.out.println("------Média aritmética ponderada------");
+              
+              System.out.println("Informe o primeiro número: ");
+              num6 = scanner.nextDouble();
+              System.out.println("Informe o seu peso: ");
+              Pes1 = scanner.nextDouble();
+              System.out.println("Informe o segundo número: ");
+              num7 = scanner.nextDouble();
+              System.out.println("Informe o seu peso: ");
+              Pes2 = scanner.nextDouble();
+              System.out.println("Informe o terceiro número: ");
+              num8 = scanner.nextDouble();
+              System.out.println("Informe o seu peso: ");
+              Pes3 = scanner.nextDouble();
+              
+              MP = ma.MedP(num6, num7, num8, Pes1, Pes2, Pes3);
+              
+              System.out.println("A média ponderada dos resultados oferecidos é de: " + MP);
     }
-}
+    }
+
