@@ -10,15 +10,33 @@ package com.mycompany.Calculadora_orientada_a_objetos;
  */
 public class Calculadora_MédiasAritméticas extends Calculadora{
 
-    public Double MedS(Double a, Double b, Double c, Double n){
-    
-    return (a+b+c)/n;
+    public Double MedS(Double[] a){
+    Double soma = 0.0;
+//    n = (Double) a.length
+            for (int i = 0; i < a.length; i++) {
+                soma = soma + a[i];          
+        }
+
+            return soma/a.length;
     
         }
     
-    public Double MedP(Double a, Double b, Double c, Double pes, Double pes1, Double pes2){
-    
-        return (a*pes+b*pes1+c*pes2)/(pes+pes1+pes2);
+    public Double MedP(Double[] a, Double[] pes){
+        Double conta = 0.0;
+        Double soma = 0.0;
+        
+        for (int i = 0; i < a.length; i++) {
+            conta = a[i] * pes[i];
+            soma = soma + conta;
+        }
+        
+        Double peso = 0.0;
+        
+        for (int i = 0; i < pes.length; i++) {
+            peso = peso + pes[i];
+        }
+        
+        return soma/peso;
     
         }
     }
