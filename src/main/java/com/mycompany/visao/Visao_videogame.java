@@ -22,6 +22,10 @@ public class Visao_videogame {
             videogame.setNome(new Scanner(System.in).nextLine());
             System.out.println("Preço: ");
             videogame.setPreço(new Scanner (System.in).nextDouble());
-            
+            System.out.println("Plataforma ");
+            videogame.setPlataforma(new Scanner(System.in).nextLine());
+            System.out.println("=========================================");
+                    
+            return videogame;
         }
 }
