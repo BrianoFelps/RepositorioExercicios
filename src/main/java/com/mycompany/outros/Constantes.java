@@ -14,4 +14,8 @@ public class Constantes {
     public static final int ALTERAR = 2;
     public static final int REMOVER = 3;
     public static final int LISTAR = 4;
+    
+    public static final String REMOVER_SIM = "s";
+    public static final String REMOVER_NAO = "n";
+    
 }

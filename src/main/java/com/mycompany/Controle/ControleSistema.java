@@ -6,10 +6,12 @@ package com.mycompany.Controle;
 
 import com.mycompany.modelo.Computador;
 import com.mycompany.modelo.Videogame;
+import com.mycompany.outros.Constantes;
 import com.mycompany.visao.VisaoMenu;
 import com.mycompany.visao.Visao_Computador;
 import com.mycompany.visao.Visao_videogame;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
@@ -68,4 +70,16 @@ public class ControleSistema {
              }
         }
     }
+    
+    public static void remover (int indiceProduto){
+//        Object object = prods.get (indiceProduto);
+        System.out.println("Deseja realmente remover o produto?");
+        String sn = new Scanner (System.in).next();
+        
+        if (sn.equals(Constantes.REMOVER_SIM)){
+            prods.remove(indiceProduto);
+        }
+//            prods.remove(indiceProduto);
+    }
+    
 }
