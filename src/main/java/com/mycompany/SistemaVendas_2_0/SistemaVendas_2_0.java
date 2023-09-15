@@ -29,7 +29,7 @@ public class SistemaVendas_2_0 {
                 ControleSistema.alterar(VisaoMenu.menuAlteracaoProduto());
             }
             else if (opcaoMenu == Constantes.REMOVER) {
-                
+                ControleSistema.remover(VisaoMenu.menuRemocaoProduto());
             }
             else if (opcaoMenu == Constantes.LISTAR) {
                 ControleSistema.listar(ControleSistema.prods);

@@ -73,13 +73,13 @@ public class ControleSistema {
     
     public static void remover (int indiceProduto){
 //        Object object = prods.get (indiceProduto);
-        System.out.println("Deseja realmente remover o produto?");
-        String sn = new Scanner (System.in).next();
+        
+        System.out.println("Deseja realmente remover o produto? (S/N) ");
+        String sn = new Scanner (System.in).next().toLowerCase();
         
         if (sn.equals(Constantes.REMOVER_SIM)){
             prods.remove(indiceProduto);
         }
 //            prods.remove(indiceProduto);
-    }
-    
+    }   
 }
