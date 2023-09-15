@@ -53,4 +53,19 @@ public class ControleSistema {
             ControleSistema.prods.set(indiceProduto, computador);
         }
     }
+    
+    public static void listar(ArrayList<Object> prods){
+        for (int i = 0; i < prods.size(); i++) {
+            Object object = prods.get(i);
+            
+            if (object instanceof Videogame){
+                Videogame videogame = (Videogame) object;
+                System.out.println(videogame.toString());
+            }
+            else if (object instanceof Computador){
+                Computador computador = (Computador) object;
+                System.out.println(computador.toString());
+             }
+        }
+    }
 }

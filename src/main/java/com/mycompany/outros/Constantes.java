@@ -8,6 +8,10 @@ package com.mycompany.outros;
  *
  * @author brian.7908
  */
+//o final declara que será constante o valor
 public class Constantes {
-    
+    public static final int CADASTRAR = 1;
+    public static final int ALTERAR = 2;
+    public static final int REMOVER = 3;
+    public static final int LISTAR = 4;
 }

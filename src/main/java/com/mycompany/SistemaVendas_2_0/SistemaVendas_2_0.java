@@ -4,6 +4,8 @@
  */
 package com.mycompany.SistemaVendas_2_0;
 
+import com.mycompany.Controle.ControleSistema;
+import com.mycompany.outros.Constantes;
 import com.mycompany.visao.VisaoMenu;
 
 /**
@@ -20,6 +22,18 @@ public class SistemaVendas_2_0 {
             
             opcaoMenu = VisaoMenu.menuPrincipal();
          
-        }
+            if(opcaoMenu == Constantes.CADASTRAR){
+                ControleSistema.cadastrar();
+            }
+            else if (opcaoMenu == Constantes.ALTERAR) {
+                ControleSistema.alterar(VisaoMenu.menuAlteracaoProduto());
+            }
+            else if (opcaoMenu == Constantes.REMOVER) {
+                
+            }
+            else if (opcaoMenu == Constantes.LISTAR) {
+                ControleSistema.listar(ControleSistema.prods);
+            }
     }    
+}
 }
