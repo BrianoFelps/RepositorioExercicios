@@ -8,6 +8,6 @@ package com.mycompany.outros;
  *
  * @author brian.7908
  */
-public class outros {
+public class Constantes {
     
 }

@@ -4,6 +4,8 @@
  */
 package com.mycompany.SistemaVendas_2_0;
 
+import com.mycompany.visao.VisaoMenu;
+
 /**
  *
  * @author brian.7908
@@ -12,6 +14,12 @@ public class SistemaVendas_2_0 {
     
     public static void main(String[] args) {
         
-    }
+        int opcaoMenu;
+        
+        while(true){
             
+            opcaoMenu = VisaoMenu.menuPrincipal();
+         
+        }
+    }    
 }
