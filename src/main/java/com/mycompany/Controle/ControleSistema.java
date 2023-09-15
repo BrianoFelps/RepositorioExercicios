@@ -73,13 +73,19 @@ public class ControleSistema {
     
     public static void remover (int indiceProduto){
 //        Object object = prods.get (indiceProduto);
+        indiceProduto = indiceProduto - 1;
         
         System.out.println("Deseja realmente remover o produto? (S/N) ");
         String sn = new Scanner (System.in).next().toLowerCase();
         
         if (sn.equals(Constantes.REMOVER_SIM)){
+            //O try e o catch são analisadores de erros, que caso dê erro aparece uma mensagem, o e.getMessage aponta o motivo.
+            try{
             prods.remove(indiceProduto);
+        }catch(Exception e){
+                System.out.println("Não foi possível remover o produto, por " + e.getMessage());
         }
+     }
 //            prods.remove(indiceProduto);
     }   
 }
