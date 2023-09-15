@@ -75,15 +75,30 @@ public class ControleSistema {
 //        Object object = prods.get (indiceProduto);
         indiceProduto = indiceProduto - 1;
         
-        System.out.println("Deseja realmente remover o produto? (S/N) ");
+        Object object = prods.get(indiceProduto);
+        
+                    if(object instanceof Videogame){
+            Videogame videogame = new Videogame();
+            videogame = (Videogame) object;
+                    System.out.println("Deseja realmente remover o produto " + videogame.getNome() + "? (S/N) ");
+                    }
+                    if(object instanceof Computador){
+            Computador computador = new Computador();
+            computador = (Computador) object;
+            System.out.println("Deseja realmente remover o produto " + computador.getNome() + "? (S/N) ");
+                    }
+        
+
         String sn = new Scanner (System.in).next().toLowerCase();
         
         if (sn.equals(Constantes.REMOVER_SIM)){
+
             //O try e o catch são analisadores de erros, que caso dê erro aparece uma mensagem, o e.getMessage aponta o motivo.
             try{
             prods.remove(indiceProduto);
+                System.out.println("Produto removido com sucesso!");
         }catch(Exception e){
-                System.out.println("Não foi possível remover o produto, por " + e.getMessage());
+                System.out.println("Produto inexistente!");
         }
      }
 //            prods.remove(indiceProduto);
