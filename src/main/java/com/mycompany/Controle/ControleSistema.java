@@ -124,5 +124,55 @@ public class ControleSistema {
         }
      }
 //            prods.remove(indiceProduto);
-    }   
+    }
+    
+    public static void Vender (ArrayList<Object> prods, int indiceProduto){
+            indiceProduto = indiceProduto - 1;
+            
+            Object object = prods.get(indiceProduto);
+            Scanner scanner = new Scanner(System.in);
+            
+            if(object instanceof Videogame){
+            Videogame videogame = new Videogame();
+            videogame = (Videogame) object;
+                    System.out.println("Deseja vender o produto " + videogame.getNome() + ", de R$" + videogame.getPreço() + ". Quantos serão vendidos? ");
+                    Double qnt = scanner.nextDouble();
+                     
+                     Double valor = qnt * videogame.getPreço();
+                     
+                     System.out.println("Tem certeza que deseja vender " + qnt + " unidades de " + videogame.getNome() + " por R$" + valor + "? (S/N) ");
+                    }
+                    if(object instanceof Computador){
+            Computador computador = new Computador();
+            computador = (Computador) object;
+            System.out.println("Deseja vender o produto " + computador.getNome() +  ", de R$" + computador.getPreço() + ". Quantos serão vendidos? ");
+            Double qnt = scanner.nextDouble();
+                     
+                    Double valor = qnt * computador.getPreço() ;
+                    
+                    System.out.println("Tem certeza que deseja vender " + qnt + " unidades de " + computador.getNome() + " por R$" + valor + "? (S/N) ");
+                    }
+                     if(object instanceof Televisao){
+            Televisao TV = new Televisao();
+            TV = (Televisao) object;
+            System.out.println("Deseja vender o produto " + TV.getNome() +  ", de R$" + TV.getPreço() + ". Quantos serão vendidos? ");
+            Double qnt = scanner.nextDouble();
+                     
+                     Double valor = qnt * TV.getPreço();
+                     
+                         System.out.println("Tem certeza que deseja vender " + qnt + " unidades de " + TV.getNome() + " por R$" + valor + "? (S/N) ");
+                    }
+                     
+                     String sn = new Scanner (System.in).next().toLowerCase();
+                     
+                     
+                     if (sn.equals(Constantes.REMOVER_SIM)){
+
+            try{
+                System.out.println("Produto(s) vendido(s) com sucesso!");
+        }catch(Exception e){
+                System.out.println("Produto(s) inexistente(s)!");
+        }
+    }
+}
 }

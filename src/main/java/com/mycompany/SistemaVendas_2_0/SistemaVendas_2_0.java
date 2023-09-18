@@ -34,6 +34,9 @@ public class SistemaVendas_2_0 {
             else if (opcaoMenu == Constantes.LISTAR) {
                 ControleSistema.listar(ControleSistema.prods);
             }
+            else if (opcaoMenu == Constantes.VENDER){
+                ControleSistema.Vender(ControleSistema.prods, VisaoMenu.menuVendaProduto());
+            }
+            }
     }    
-}
 }
