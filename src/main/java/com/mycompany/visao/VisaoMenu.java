@@ -6,6 +6,7 @@ package com.mycompany.visao;
 
 import com.mycompany.Controle.ControleSistema;
 import com.mycompany.modelo.Computador;
+import com.mycompany.modelo.Televisao;
 import com.mycompany.modelo.Videogame;
 import java.util.Scanner;
 
@@ -35,6 +36,7 @@ public class VisaoMenu {
         System.out.println("Qual categoria de produto deseja cadastrar?");
         System.out.println("1 - VideoGame");
         System.out.println("2 - Computador");
+        System.out.println("3 - Televisão");
         System.out.println("================================");
         int opcaoProd = new Scanner (System.in).nextInt();
         
@@ -73,11 +75,21 @@ public class VisaoMenu {
             ((Computador) object).setProc(new Scanner (System.in).nextLine());
             System.out.println("Nova quantidade de memória RAM:");
             ((Computador) object).setMemRAM(new Scanner(System.in).nextDouble());
+        }else if(object instanceof Televisao){
+            System.out.println("Novo nome: ");
+            ((Televisao) object).setNome(new Scanner (System.in).nextLine());
+            System.out.println("Novo preço: ");
+            ((Televisao) object).setPreço(new Scanner (System.in).nextDouble());
+            System.out.println("Nova marca: ");
+            ((Televisao) object).setMarca(new Scanner (System.in).nextLine());
+            System.out.println("Nova quantidade de memória RAM: ");
+            ((Televisao) object).setResol(new Scanner(System.in).nextLine());
+            System.out.println("Novo núm. de polegadas: ");
+            ((Televisao) object).setPoleg(new Scanner (System.in).nextDouble());
         }
-        
         return object;
-                
     }
+    
     public static int menuRemocaoProduto(){
         System.out.println("======REMOVER PRODUTO======");
         System.out.println("Qual produto deseja remover? ");

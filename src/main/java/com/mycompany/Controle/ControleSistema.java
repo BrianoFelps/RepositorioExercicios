@@ -5,9 +5,11 @@
 package com.mycompany.Controle;
 
 import com.mycompany.modelo.Computador;
+import com.mycompany.modelo.Televisao;
 import com.mycompany.modelo.Videogame;
 import com.mycompany.outros.Constantes;
 import com.mycompany.visao.VisaoMenu;
+import com.mycompany.visao.VisaoTV;
 import com.mycompany.visao.Visao_Computador;
 import com.mycompany.visao.Visao_videogame;
 import java.util.ArrayList;
@@ -28,6 +30,8 @@ public class ControleSistema {
             prods.add(Visao_videogame.menuCadastroVideogame());
         } else if (opcaoProduto == 2){
             prods.add(Visao_Computador.menuCadastroComputador());
+        } else if (opcaoProduto == 3){
+            prods.add(VisaoTV.MenuCadastroTV());
         }
     }
     
@@ -54,6 +58,15 @@ public class ControleSistema {
             computador = (Computador) VisaoMenu.menuAlteracaoProdutoInformacoes(computador);
             ControleSistema.prods.set(indiceProduto, computador);
         }
+        else if (object instanceof Televisao){
+            Televisao TV = new Televisao();
+            TV = (Televisao) object;
+            
+            System.out.println("Alterando o produto: " + TV.toString());
+            
+            TV = (Televisao) VisaoMenu.menuAlteracaoProdutoInformacoes(TV);
+            ControleSistema.prods.set(indiceProduto, TV);
+        }
     }
     
     public static void listar(ArrayList<Object> prods){
@@ -67,6 +80,10 @@ public class ControleSistema {
             else if (object instanceof Computador){
                 Computador computador = (Computador) object;
                 System.out.println(computador.toString());
+             }
+            else if (object instanceof Televisao){
+                Televisao TV = (Televisao) object;
+                System.out.println(TV.toString());
              }
         }
     }
@@ -86,6 +103,11 @@ public class ControleSistema {
             Computador computador = new Computador();
             computador = (Computador) object;
             System.out.println("Deseja realmente remover o produto " + computador.getNome() + "? (S/N) ");
+                    }
+                     if(object instanceof Televisao){
+            Televisao TV = new Televisao();
+            TV = (Televisao) object;
+            System.out.println("Deseja realmente remover o produto " + TV.getNome() + "? (S/N) ");
                     }
         
 

@@ -15,6 +15,8 @@ com\mycompany\modelo\Videogame.class
 com\mycompany\Controle\ControleSistema.class
 com\mycompany\visao\Visao_Computador.class
 com\mycompany\lista_de_exercicios1\Média_aluno.class
+com\mycompany\visao\VisaoTV.class
+com\mycompany\modelo\Televisao.class
 com\mycompany\lista_de_exercicios1\Fatorial.class
 com\mycompany\Calculadora_orientada_a_objetos\Calculadora_MédiasAritméticas.class
 com\mycompany\lista_de_exercicios1\Par_impar.class
