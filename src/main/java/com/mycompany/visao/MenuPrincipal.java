@@ -17,6 +17,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
      */
     public MenuPrincipal() {
         initComponents();
+        //setTitle("Menu principal");
+        setExtendedState(MAXIMIZED_BOTH);
     }
 
     /**
@@ -33,6 +35,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         BtnRem = new javax.swing.JButton();
         BtnList = new javax.swing.JButton();
         BtnVen = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -56,6 +59,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         BtnVen.setText("Vender");
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setText("Sistema de vendas 2.0");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -71,26 +77,37 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addComponent(BtnList)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BtnVen)
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnCad)
                     .addComponent(BtnAlt)
                     .addComponent(BtnRem)
                     .addComponent(BtnList)
                     .addComponent(BtnVen))
-                .addContainerGap(440, Short.MAX_VALUE))
+                .addContainerGap(403, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtnCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCadActionPerformed
-        JOptionPane.showMessageDialog(null, "oi");
+        MenuCategorias menucatg = new MenuCategorias();
+        
+        //menucatg.setTitle("Seleção de categorias");
+        menucatg.setLocationRelativeTo(null);
+        menucatg.setVisible(true);
+        
     }//GEN-LAST:event_BtnCadActionPerformed
 
     private void BtnAltActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAltActionPerformed
@@ -138,5 +155,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton BtnList;
     private javax.swing.JButton BtnRem;
     private javax.swing.JButton BtnVen;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
