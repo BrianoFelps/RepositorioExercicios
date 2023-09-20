@@ -4,7 +4,9 @@
  */
 package com.mycompany.visao;
 
+import com.mycompany.Controle.ControleSistema;
 import com.mycompany.modelo.Computador;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -150,13 +152,24 @@ public class CadComputador extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnCanActionPerformed
 
     private void BtnSavActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSavActionPerformed
-                Computador compt = new Computador();
-                //pegar o nome da caixinha de texto e settar no banco de dados/ lista de produtos
-                compt.setNome(TfNome.getText());
-                //Converter String em Double, método Double.parseDouble(), colando o string dentro
-                compt.setPreço(Double.parseDouble(TfPreco.getText()));
-                compt.setProc(TfProc.getText());
-                compt.setMemRAM(Double.parseDouble(TfMemRam.getText()));
+                
+        try{
+            Computador compt = new Computador();
+                    //pegar o nome da caixinha de texto e settar no banco de dados/ lista de produtos
+                    compt.setNome(TfNome.getText());
+                    //Converter String em Double, método Double.parseDouble(), colando o string dentro
+                    compt.setPreço(Double.parseDouble(TfPreco.getText()));
+                    compt.setProc(TfProc.getText());
+                    compt.setMemRAM(Double.parseDouble(TfMemRam.getText()));
+
+
+                    // Importação do computador do sistema de listas, vindo do ControleSistema.
+             ControleSistema.prods.add(compt);
+
+                    JOptionPane.showMessageDialog(null, "Computador " + compt.getNome() + " salvo com sucesso!");
+        } catch (Exception e){
+                JOptionPane.showMessageDialog(null, "Erro ao salvar!");
+        }
     }//GEN-LAST:event_BtnSavActionPerformed
 
     private void TfNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TfNomeActionPerformed
