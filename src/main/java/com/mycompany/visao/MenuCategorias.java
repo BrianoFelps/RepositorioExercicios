@@ -35,6 +35,7 @@ public class MenuCategorias extends javax.swing.JFrame {
         BtnOk = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Menu categorias");
 
         CbCategorias.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Computador", "Videogame", "Televisao" }));
         CbCategorias.addActionListener(new java.awt.event.ActionListener() {
@@ -84,17 +85,34 @@ public class MenuCategorias extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void CbCategoriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CbCategoriasActionPerformed
-        // TODO add your handling code here:
+   
     }//GEN-LAST:event_CbCategoriasActionPerformed
-
+// NOVA CONDICIONAL: SWITCH (Se testam vários valores para ter um escolhido, e executar uma função)
     private void BtnOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnOkActionPerformed
-     switch(CbCategorias.getSelectedIndex()).case what:
-              
-     break;
+     switch(CbCategorias.getSelectedIndex()){
+         case 0:
+            CadComputador cadcmp = new CadComputador ();
+                // para abrir o sisteminha no centro da tela
+                  cadcmp.setLocationRelativeTo(null);
+                  // para a tela aparecer
+                cadcmp.setVisible(true);
+            break;
+         case 1: 
+             CadVideogame cadvg = new CadVideogame();
+                cadvg.setLocationRelativeTo(null);
+                cadvg.setVisible(true);
+                break;
+         case 2 :
+             CadTv cadtv = new CadTv();
+                cadtv.setLocationRelativeTo(null);
+                cadtv.setVisible(true);
+                break;                                                                                                                                                                                                                                                                      
+    
 //Para mostrar o valor da categoria selecionada (a usamos no switch):
 //        JOptionPane.showMessageDialog(null, CbCategorias.getSelectedIndex());
     }//GEN-LAST:event_BtnOkActionPerformed
-
+}
+    
     /**
      * @param args the command line arguments
      */

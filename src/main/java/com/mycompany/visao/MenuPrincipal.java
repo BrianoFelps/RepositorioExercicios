@@ -38,6 +38,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Menu principal");
 
         BtnCad.setText("Cadastrar");
         BtnCad.addActionListener(new java.awt.event.ActionListener() {
@@ -54,10 +55,25 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
 
         BtnRem.setText("Remover");
+        BtnRem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnRemActionPerformed(evt);
+            }
+        });
 
         BtnList.setText("Listar");
+        BtnList.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnListActionPerformed(evt);
+            }
+        });
 
         BtnVen.setText("Vender");
+        BtnVen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnVenActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setText("Sistema de vendas 2.0");
@@ -68,19 +84,18 @@ public class MenuPrincipal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(BtnCad)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(BtnAlt)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(BtnRem)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(BtnList)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(BtnVen)
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(BtnCad)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BtnAlt)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BtnRem)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BtnList)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BtnVen))
+                    .addComponent(jLabel1))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -113,6 +128,18 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void BtnAltActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAltActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_BtnAltActionPerformed
+
+    private void BtnRemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnRemActionPerformed
+
+    private void BtnListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnListActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnListActionPerformed
+
+    private void BtnVenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVenActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnVenActionPerformed
 
     /**
      * @param args the command line arguments

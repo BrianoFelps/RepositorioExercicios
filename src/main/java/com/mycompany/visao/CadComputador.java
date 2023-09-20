@@ -4,6 +4,8 @@
  */
 package com.mycompany.visao;
 
+import com.mycompany.modelo.Computador;
+
 /**
  *
  * @author brian.7908
@@ -37,23 +39,58 @@ public class CadComputador extends javax.swing.JFrame {
         BtnCan = new javax.swing.JButton();
         BtnSav = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Cadastro de computador");
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setText("NOME");
 
+        TfNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TfNomeActionPerformed(evt);
+            }
+        });
+
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setText("PREÇO");
+
+        TfPreco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TfPrecoActionPerformed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setText("PROCESSADOR");
 
+        TfProc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TfProcActionPerformed(evt);
+            }
+        });
+
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setText("MEMÓRIA RAM");
 
+        TfMemRam.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TfMemRamActionPerformed(evt);
+            }
+        });
+
         BtnCan.setText("Cancelar");
+        BtnCan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnCanActionPerformed(evt);
+            }
+        });
 
         BtnSav.setText("Salvar");
+        BtnSav.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnSavActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -65,18 +102,18 @@ public class CadComputador extends javax.swing.JFrame {
                     .addComponent(TfNome)
                     .addComponent(TfProc, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(BtnCan)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(BtnSav))
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
                             .addComponent(jLabel2)
                             .addComponent(jLabel3)
                             .addComponent(jLabel4)
-                            .addComponent(TfPreco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TfMemRam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(BtnCan)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(BtnSav)))
+                            .addComponent(TfPreco, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TfMemRam, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -107,6 +144,36 @@ public class CadComputador extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BtnCanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCanActionPerformed
+                // TODO add your handling code here:
+    }//GEN-LAST:event_BtnCanActionPerformed
+
+    private void BtnSavActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSavActionPerformed
+                Computador compt = new Computador();
+                //pegar o nome da caixinha de texto e settar no banco de dados/ lista de produtos
+                compt.setNome(TfNome.getText());
+                //Converter String em Double, método Double.parseDouble(), colando o string dentro
+                compt.setPreço(Double.parseDouble(TfPreco.getText()));
+                compt.setProc(TfProc.getText());
+                compt.setMemRAM(Double.parseDouble(TfMemRam.getText()));
+    }//GEN-LAST:event_BtnSavActionPerformed
+
+    private void TfNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TfNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TfNomeActionPerformed
+
+    private void TfPrecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TfPrecoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TfPrecoActionPerformed
+
+    private void TfProcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TfProcActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TfProcActionPerformed
+
+    private void TfMemRamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TfMemRamActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TfMemRamActionPerformed
 
     /**
      * @param args the command line arguments
