@@ -148,7 +148,7 @@ public class CadComputador extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtnCanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCanActionPerformed
-                // TODO add your handling code here:
+               dispose();
     }//GEN-LAST:event_BtnCanActionPerformed
 
     private void BtnSavActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSavActionPerformed
@@ -161,15 +161,26 @@ public class CadComputador extends javax.swing.JFrame {
                     compt.setPreço(Double.parseDouble(TfPreco.getText()));
                     compt.setProc(TfProc.getText());
                     compt.setMemRAM(Double.parseDouble(TfMemRam.getText()));
-
+ 
 
                     // Importação do computador do sistema de listas, vindo do ControleSistema.
              ControleSistema.prods.add(compt);
 
                     JOptionPane.showMessageDialog(null, "Computador " + compt.getNome() + " salvo com sucesso!");
+                    
+                    //Limpar os campos
+                    TfNome.setText("");
+                    TfPreco.setText("");
+                    TfProc.setText("");
+                    TfMemRam.setText("");
+                    
         } catch (Exception e){
                 JOptionPane.showMessageDialog(null, "Erro ao salvar!");
         }
+        
+//        for (int i = 0; i < ControleSistema.prods.size(); i++) {
+//            System.out.println(ControleSistema.prods.get(i));
+//        }
     }//GEN-LAST:event_BtnSavActionPerformed
 
     private void TfNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TfNomeActionPerformed

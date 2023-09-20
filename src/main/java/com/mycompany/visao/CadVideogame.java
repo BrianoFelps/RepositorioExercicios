@@ -4,6 +4,10 @@
  */
 package com.mycompany.visao;
 
+import com.mycompany.Controle.ControleSistema;
+import com.mycompany.modelo.Videogame;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author brian.7908
@@ -26,23 +30,151 @@ public class CadVideogame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnSave = new javax.swing.JButton();
+        TfPlat = new javax.swing.JTextField();
+        BtnCan = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        TfNome = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        TfPreco = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de videogame");
+
+        btnSave.setText("Salvar");
+        btnSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSaveActionPerformed(evt);
+            }
+        });
+
+        TfPlat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TfPlatActionPerformed(evt);
+            }
+        });
+
+        BtnCan.setText("Cancelar");
+        BtnCan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnCanActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel1.setText("NOME");
+
+        TfNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TfNomeActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel2.setText("PREÇO");
+
+        TfPreco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TfPrecoActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel3.setText("PLATAFORMA");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(318, Short.MAX_VALUE)
+                .addComponent(btnSave)
+                .addContainerGap())
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(TfNome)
+                        .addComponent(TfPlat, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(BtnCan)
+                                .addComponent(jLabel1)
+                                .addComponent(jLabel2)
+                                .addComponent(jLabel3)
+                                .addComponent(TfPreco, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(0, 0, Short.MAX_VALUE)))
+                    .addContainerGap()))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(440, Short.MAX_VALUE)
+                .addComponent(btnSave)
+                .addContainerGap())
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(9, 9, 9)
+                    .addComponent(jLabel1)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(TfNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(jLabel2)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(TfPreco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(jLabel3)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(TfPlat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 248, Short.MAX_VALUE)
+                    .addComponent(BtnCan)
+                    .addGap(9, 9, 9)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void TfPlatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TfPlatActionPerformed
+       
+    }//GEN-LAST:event_TfPlatActionPerformed
+
+    private void BtnCanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCanActionPerformed
+        dispose();
+    }//GEN-LAST:event_BtnCanActionPerformed
+
+    private void TfNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TfNomeActionPerformed
+        
+    }//GEN-LAST:event_TfNomeActionPerformed
+
+    private void TfPrecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TfPrecoActionPerformed
+        
+    }//GEN-LAST:event_TfPrecoActionPerformed
+
+    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
+        
+        try{
+                Videogame vidgam = new Videogame();
+
+                vidgam.setNome(TfNome.getText());
+                vidgam.setPreço(Double.parseDouble(TfPreco.getText()));
+                vidgam.setPlataforma(TfPlat.getText());
+
+                ControleSistema.prods.add(vidgam);
+
+                JOptionPane.showMessageDialog(null, "Videogame " + vidgam.getNome() + " salvo com sucesso!");
+
+                TfNome.setText("");
+                        TfPreco.setText("");
+                        TfPlat.setText("");
+        } catch (Exception e){
+                JOptionPane.showMessageDialog(null, "Erro ao salvar!");
+        }
+//        for (int i = 0; i < ControleSistema.prods.size(); i++) {
+//            System.out.println(ControleSistema.prods.get(i));
+//        }
+    }//GEN-LAST:event_btnSaveActionPerformed
+        
     /**
      * @param args the command line arguments
      */
@@ -79,5 +211,13 @@ public class CadVideogame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnCan;
+    private javax.swing.JTextField TfNome;
+    private javax.swing.JTextField TfPlat;
+    private javax.swing.JTextField TfPreco;
+    private javax.swing.JButton btnSave;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }
