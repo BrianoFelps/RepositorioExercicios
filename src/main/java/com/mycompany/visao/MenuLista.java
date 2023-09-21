@@ -5,7 +5,7 @@
 package com.mycompany.visao;
 
 import com.mycompany.Controle.ControleSistema;
-
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -18,11 +18,26 @@ public class MenuLista extends javax.swing.JFrame {
      */
     public MenuLista() {
         initComponents();
-        
-        
     }
     
-    private ControleSistema ct = new ControleSistema();
+    public void listarTodos(){
+        //Instanciação de modelo de tabela, que depois se utiliza para definir a tabela da tela, desbloqueando também novas propriedades
+        DefaultTableModel dtm = new DefaultTableModel();
+        
+        dtm.addColumn("Informações");
+        dtm.addColumn("Categoria");
+        
+        tblista.setModel(dtm);
+        
+        //pra listar, deve-se voltar o valor de linhas a 0, para não acumular o número de linhas
+        dtm.setRowCount(0);
+        for (int i = 0; i < ControleSistema.prods.size(); i++) {
+            //para cada produto da lista declarado, há de ter uma linha, se instancia tanto a linha quanto o número de colunas. O valor passado será dois, pelo número de colunas criadas acima
+                Object[] linha = new Object[dtm.getColumnCount()];
+                //o addrow espera um array object
+                dtm.addRow(linha);
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -33,23 +48,29 @@ public class MenuLista extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jLabel1 = new javax.swing.JLabel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jlprods = new javax.swing.JList<>();
+        CbCategorias = new javax.swing.JComboBox<>();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblista = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Lista");
+        setTitle("Lista de produtos");
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel1.setText("Lista de produtos");
-
-        jlprods.setModel(new javax.swing.AbstractListModel<Prod>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
+        CbCategorias.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Todos", "Computador", "Videogame", "Televisão", " " }));
+        CbCategorias.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CbCategoriasActionPerformed(evt);
+            }
         });
-        jScrollPane3.setViewportView(jlprods);
+
+        tblista.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nome", "Preço", "Processador", "Memória RAM"
+            }
+        ));
+        jScrollPane1.setViewportView(tblista);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -57,21 +78,27 @@ public class MenuLista extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
-                .addContainerGap(556, Short.MAX_VALUE))
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING)
+                .addComponent(CbCategorias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 409, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(CbCategorias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 449, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 435, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void CbCategoriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CbCategoriasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CbCategoriasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -109,9 +136,8 @@ public class MenuLista extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JList<Prod> jlprods;
+    private javax.swing.JComboBox<String> CbCategorias;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tblista;
     // End of variables declaration//GEN-END:variables
 }
