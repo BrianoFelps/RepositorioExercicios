@@ -130,7 +130,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnAltActionPerformed
 
     private void BtnRemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRemActionPerformed
-        // TODO add your handling code here:
+            MenuRemover menurem = new MenuRemover();
+            
+            menurem.setLocationRelativeTo(null);
+            menurem.setVisible(true);
     }//GEN-LAST:event_BtnRemActionPerformed
 
     private void BtnListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnListActionPerformed
